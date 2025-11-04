@@ -6,8 +6,8 @@ TARGET=tinysh
 all: $(TARGET)
 
 $(TARGET):
-    $(CC) $(CFLAGS) -o $(TARGET) $(LDFLAGS)
-    strip $(TARGET)
+	$(CC) $(CFLAGS) -o $(TARGET) $(LDFLAGS)
+	strip $(TARGET)
 
 clean:
-    rm -f $(TARGET)
+	rm -f $(TARGET)

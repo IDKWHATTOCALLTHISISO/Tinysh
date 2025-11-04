@@ -6,7 +6,7 @@ TARGET=tinysh
 all: $(TARGET)
 
 $(TARGET):
-	$(CC) $(CFLAGS) -o $(TARGET) $(LDFLAGS)
+	$(CC) $(CFLAGS) -o $(TARGET) tinysh.c $(LDFLAGS)
 	strip $(TARGET)
 
 clean:

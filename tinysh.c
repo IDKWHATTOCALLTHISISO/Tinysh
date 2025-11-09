@@ -3,6 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <limits.h>
 
 #define MAX_LINE 1024
 #define MAX_ARGS 64
@@ -10,10 +11,12 @@
 int main() {
     char line[MAX_LINE];
     char *args[MAX_ARGS];
-
+	char cwd[PATH_MAX];
+    
     while (1) {
+        getcwd(cwd, sizeof(cwd));
         // Print prompt
-        printf("tinysh> ");
+        printf("tinysh@%s> ", cwd);
         fflush(stdout);
 
         // Read input
